@@ -5,6 +5,7 @@ import tads.eaj.ufrn.aulamvccrud.model.Postagem;
 import tads.eaj.ufrn.aulamvccrud.repository.PostagemRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PostagemService {
@@ -23,4 +24,16 @@ public class PostagemService {
     public List<Postagem> findAll(){
         return repository.findAll();
     }
+
+    public Optional<Postagem> findById(Integer id){
+        return repository.findById(id);
+    }
 }
+
+
+
+
+
+
+
+

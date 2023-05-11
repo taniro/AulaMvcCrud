@@ -13,7 +13,7 @@ import lombok.*;
 @AllArgsConstructor
 public class Postagem {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     Integer id;
     String autor;
     String mensagem;
