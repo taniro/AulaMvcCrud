@@ -5,6 +5,6 @@ import tads.eaj.ufrn.aulamvccrud.model.Postagem;
 
 import java.util.List;
 
-public interface PostagemRepository extends JpaRepository<Postagem, Integer> {
+public interface PostagemRepository extends JpaRepository<Postagem, String> {
       List<Postagem> findPostagemByAutor(String autor);
 }

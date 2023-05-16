@@ -5,14 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello World</h1>
+<h1>Sistema de Postagens</h1>
+
+<h2>Cadastre <a th:href="@{cadastrarPage}">aqui</a> </h2>
 
 <table>
     <tr th:each="postagem: ${postagemList}">
-        <td th:text="${postagem.autor}">
-        <td th:text="${postagem.id}">
+        <td th:text="${postagem.id}"></td>
+        <td th:text="${postagem.autor}"></td>
+        <td th:text="${postagem.mensagem}"></td>
+        <td><a th:href="@{'editarPage/'+${postagem.id}}">Editar</a></td>
+        <td><a th:href="@{'deletar/'+${postagem.id}}">Deletar</a></td>
 
-        </td>
+
     </tr>
 </table>
 

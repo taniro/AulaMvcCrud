@@ -7,6 +7,7 @@
 <body>
 <h1> Página de Edição</h1>
 <form method="post" th:action="@{/doSalvar}" th:object="${postagem}">
+    <input type="hidden" th:field="*{id}">
     Autor: <input type="text" th:field="*{autor}"> <br />
     Mensagem: <input type="text" th:field="*{mensagem}"> <br />
     Título: <input type="text" th:field="*{titulo}"> <br/>

@@ -25,8 +25,12 @@ public class PostagemService {
         return repository.findAll();
     }
 
-    public Optional<Postagem> findById(Integer id){
+    public Optional<Postagem> findById(String id){
         return repository.findById(id);
+    }
+
+    public void delete(String id){
+        repository.deleteById(id);
     }
 }
 
