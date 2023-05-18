@@ -12,3 +12,7 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: create-drop
+  security:
+    user:
+      name: user
+      password: 1234

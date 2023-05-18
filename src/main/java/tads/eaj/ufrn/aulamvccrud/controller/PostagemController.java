@@ -23,8 +23,10 @@ public class PostagemController {
 
     @RequestMapping(value = {"/", "/index", "/index.html"}, method = RequestMethod.GET)
     public String getIndex(Model model){
+
         List<Postagem> postagemList = service.findAll();
         model.addAttribute("postagemList", postagemList);
+        model.addAttribute("estiloUser", "estilos.css");
         return "index.html";
     }
 

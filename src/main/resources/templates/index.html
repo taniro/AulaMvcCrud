@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link th:href="@{'/css/'+${estiloUser}}" type="text/css" rel="stylesheet">
+    <script th:src="@{/js/script.js}" defer></script>
 </head>
 <body>
 <h1>Sistema de Postagens</h1>
+
+<div th:replace="/fragments/commons :: header"></div>
+<div th:replace='/fragments/commons :: menu(${estiloUser})'></div>
+<div th:replace="/fragments/commons :: statusCadastro('NAO_SEI')"></div>
+
+<button onclick="alerta()">Alerte</button>
 
 <h2>Cadastre <a th:href="@{cadastrarPage}">aqui</a> </h2>
 

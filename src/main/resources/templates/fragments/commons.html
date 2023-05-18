@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<header th:fragment="header">
+    <h1 class="aula"> Site Importante</h1>
+</header>
+
+<footer th:fragment="footer">
+    <h6> Rodapé do site</h6>
+</footer>
+
+<div th:fragment="menu(username)">
+    <p th:text="${username}"></p>
+</div>
+
+<div th:fragment="statusCadastro(status)">
+    <p th:switch="${status}">
+        <span th:case="'CADASTRADO'">CADASTRADO</span>
+        <span th:case="1">ALTERADO</span>
+        <span th:case="'EXCLUIDO'">EXCLUIDO</span>
+        <span th:case="*">CANCELADO</span>
+    </p>
+</div>
+
+<div th:fragment="statusUsuario(status)">
+    <p>
+        <span th:if="${status == 'NOVO'}">Bem vindo</span>
+        <span th:unless="${status == 'NOVO'}">Voltou!</span>
+    </p>
+</div>
+
+<div th:fragment="displayNome(nome)">
+    <p th:text="${nome} ?: 'ANÔNIMO'"></p>
+</div>
+
+</body>
+</html>
