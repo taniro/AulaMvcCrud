@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import tads.eaj.ufrn.aulamvccrud.model.Usuario;
 import tads.eaj.ufrn.aulamvccrud.service.UsuarioService;
 
+import java.util.List;
+
 
 @Controller
 public class UsuarioController {
@@ -32,6 +34,16 @@ public class UsuarioController {
         service.create(u);
 
         return "redirect:/";
+    }
+
+    @GetMapping("/listUsuarios")
+    public String listAll(){
+        List<Usuario> usuarios = service.listAll();
+        for (Usuario u : usuarios){
+            System.out.println(u);
+        }
+
+        return "listUsuarios";
     }
 
 }
